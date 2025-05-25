@@ -11,7 +11,79 @@
 //
 // ****************************************************************************
 
+#define AGING -1;
 
+unsigned int systime () {
+    return 0;
+}
+
+void age_task(task_t* task) {
+    task->dynamicPriority += AGING; // Envelhecimento da tarefa
+    if (task->dynamicPriority < -20) {
+        task->dynamicPriority = -20; // Limita a prioridade dinâmica
+    }
+}
+
+task_t * scheduler () {
+#ifdef DEBUG
+    printf("\nscheduler - BEGIN");
+#endif
+    task_t *task = readyQueue; //Primeiro elemento da fila de tarefas prontas
+    task_t *taskMaxPrio = task;
+    // Verifica se a fila de tarefas prontas está vazia
+    if (task == NULL) {
+        return NULL; 
+    }
+    int max_priority = 20; // Maior prioridade = -20
+
+    // Procura a tarefa com maior prioridade
+    do {
+        if (task->dynamicPriority < max_priority) {
+            max_priority = task->dynamicPriority;
+            taskMaxPrio = task;
+        }
+        age_task(task); // Aplica envelhecimento
+        task = task->next;
+    }
+    while (task != readyQueue);
+
+    /*
+    do{
+        if(taskMaxPrio->staticPriority >= task->staticPriority && taskMaxPrio->id >= task->id && taskMaxPrio->dynamicPriority == task->dynamicPriority) {
+            taskMaxPrio = task;
+        } else {
+            task->dynamicPriority += AGING;
+        }
+        task = task->next;
+    }while (task != readyQueue);
+    */
+
+    taskMaxPrio->dynamicPriority = taskMaxPrio->staticPriority;
+
+#ifdef DEBUG
+    printf("\nscheduler - Tarefa escolhida [%d]", taskMaxPrio->id);
+#endif
+
+    // Remove a tarefa da fila de prontas
+    (task_t*) queue_remove((queue_t**) &readyQueue, (queue_t*) taskMaxPrio);
+
+    // Retorna a tarefa com maior prioridade
+    return taskMaxPrio;
+}
+
+void task_setprio (task_t *task, int prio){
+    if (task == NULL) {
+        task = taskExec; 
+    }
+    task->staticPriority = prio;
+}
+
+int task_getprio (task_t *task) {
+    if (task == NULL) {
+        task = taskExec; 
+    }
+    return task->staticPriority;
+}
 
 void before_ppos_init () {
     // put your customization here
@@ -40,7 +112,8 @@ void after_task_create (task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_create - AFTER - [%d]", task->id);
 #endif
-    
+    task->staticPriority = 0;
+    task->dynamicPriority = 0;
 }
 
 void before_task_exit () {
