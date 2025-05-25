@@ -47,25 +47,24 @@ task_t * scheduler () {
     }
     while (task != readyQueue);
 
-    /*
-    do{
-        if(taskMaxPrio->staticPriority >= task->staticPriority && taskMaxPrio->id >= task->id && taskMaxPrio->dynamicPriority == task->dynamicPriority) {
-            taskMaxPrio = task;
-        } else {
-            task->dynamicPriority += AGING;
+   //printf("\nscheduler - Tarefa escolhida [%d] - Prioridade dinâmica: %d - Prioridade estática: %d\n", taskMaxPrio->id, taskMaxPrio->dynamicPriority, taskMaxPrio->staticPriority);
+
+   // Para não haver envelhecimento no começo do sistema
+    if (taskMaxPrio->id < 2) {
+        task = readyQueue;
+        do {
+            task->dynamicPriority = task->staticPriority + 1; // +1 por causa da própria iteração
+            task = task->next;
         }
-        task = task->next;
-    }while (task != readyQueue);
-    */
+        while (task != readyQueue);
+    }
 
-    taskMaxPrio->dynamicPriority = taskMaxPrio->staticPriority;
-
-#ifdef DEBUG
-    printf("\nscheduler - Tarefa escolhida [%d]", taskMaxPrio->id);
-#endif
+    //PRINT_READY_QUEUE; // Imprime a fila de tarefas prontas
 
     // Remove a tarefa da fila de prontas
     (task_t*) queue_remove((queue_t**) &readyQueue, (queue_t*) taskMaxPrio);
+
+    taskMaxPrio->dynamicPriority = taskMaxPrio->staticPriority;
 
     // Retorna a tarefa com maior prioridade
     return taskMaxPrio;
