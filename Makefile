@@ -5,7 +5,7 @@ CC = gcc
 STATIC_OBJS = ppos-all.o queue.o
 
 preempcao:
-	$(CC) -o ppos-teste ppos-core-aux.c pingpong-scheduler.c $(STATIC_OBJS)
+	$(CC) -o ppos-teste ppos-core-aux.c pingpong-preempcao.c $(STATIC_OBJS)
 
 # Limpeza
 clean:

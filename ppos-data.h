@@ -29,6 +29,7 @@ typedef struct task_t
    // ... (outros/novos campos deve ser adicionados APOS esse comentario)
    int staticPriority; // prioridade estática da tarefa (entre -20 e 20)
    int dynamicPriority; // prioridade dinâmica da tarefa (entre -20 e 20)
+   int quantum;
 
 } task_t ;
 

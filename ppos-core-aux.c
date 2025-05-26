@@ -2,6 +2,8 @@
 #include "ppos-core-globals.h"
 #include "ppos-disk-manager.h"
 
+#include <signal.h>
+#include <sys/time.h>
 
 // ****************************************************************************
 // Adicione TUDO O QUE FOR NECESSARIO para realizar o seu trabalho
@@ -12,9 +14,59 @@
 // ****************************************************************************
 
 #define AGING -1;
+#define PREEMPCAO = 1;
+int system_time=0;
+
+// estrutura que define um tratador de sinal (deve ser global ou static)
+struct sigaction action;
+
+// estrutura de inicialização to timer
+struct itimerval timer;
+
+void tratador()
+{
+    if(!taskExec){
+        exit(-1);
+    }
+    system_time++;
+    if(taskExec!=taskDisp){
+        if(taskExec->quantum>0){
+            taskExec->quantum--;
+        }
+
+        if(taskExec->quantum<=0){
+            task_yield();
+        }
+    }
+}
+
+void temporizador()
+{
+    // registra a ação para o sinal de timer SIGALRM
+    action.sa_handler = tratador ;
+    sigemptyset (&action.sa_mask) ;
+    action.sa_flags = 0 ;
+    if (sigaction (SIGALRM, &action, 0) < 0)
+    {
+        perror ("Erro em sigaction: ") ;
+        exit (1) ;
+    }
+
+    // ajusta valores do temporizador
+    timer.it_value.tv_usec = 1000;      // primeiro disparo, em micro-segundos
+    timer.it_interval.tv_usec = 1000;   // disparos subsequentes, em segundos
+
+    // arma o temporizador ITIMER_REAL (vide man setitimer)
+    if (setitimer (ITIMER_REAL, &timer, 0) < 0)
+    {
+        perror ("Erro em setitimer: ") ;
+        exit (1) ;
+    }
+}
+
 
 unsigned int systime () {
-    return 0;
+    return system_time;
 }
 
 void age_task(task_t* task) {
@@ -25,15 +77,18 @@ void age_task(task_t* task) {
 }
 
 task_t * scheduler () {
-#ifdef DEBUG
-    printf("\nscheduler - BEGIN");
+#ifdef PREEMPCAO
+    readyQueue->quantum=20;
+    return readyQueue;
 #endif
+
     task_t *task = readyQueue; //Primeiro elemento da fila de tarefas prontas
     task_t *taskMaxPrio = task;
     // Verifica se a fila de tarefas prontas está vazia
     if (task == NULL) {
         return NULL; 
     }
+
     int max_priority = 20; // Maior prioridade = -20
 
     // Procura a tarefa com maior prioridade
@@ -65,7 +120,6 @@ task_t * scheduler () {
     (task_t*) queue_remove((queue_t**) &readyQueue, (queue_t*) taskMaxPrio);
 
     taskMaxPrio->dynamicPriority = taskMaxPrio->staticPriority;
-
     // Retorna a tarefa com maior prioridade
     return taskMaxPrio;
 }
@@ -96,7 +150,7 @@ void after_ppos_init () {
 #ifdef DEBUG
     printf("\ninit - AFTER");
 #endif
-    
+    temporizador();
 }
 
 void before_task_create (task_t *task ) {
@@ -113,6 +167,7 @@ void after_task_create (task_t *task ) {
 #endif
     task->staticPriority = 0;
     task->dynamicPriority = 0;
+    task->quantum=20;
 }
 
 void before_task_exit () {
@@ -143,6 +198,7 @@ void after_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - AFTER - [%d -> %d]", taskExec->id, task->id);
 #endif
+
 }
 
 void before_task_yield () {
