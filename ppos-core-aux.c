@@ -14,7 +14,6 @@
 // ****************************************************************************
 
 #define AGING -1;
-#define PREEMPCAO = 1;
 int system_time=0;
 
 // estrutura que define um tratador de sinal (deve ser global ou static)
@@ -54,7 +53,7 @@ void temporizador()
 
     // ajusta valores do temporizador
     timer.it_value.tv_usec = 1000;      // primeiro disparo, em micro-segundos
-    timer.it_interval.tv_usec = 1000;   // disparos subsequentes, em segundos
+    timer.it_interval.tv_usec = 1000;   // disparos subsequentes, em micro-segundos
 
     // arma o temporizador ITIMER_REAL (vide man setitimer)
     if (setitimer (ITIMER_REAL, &timer, 0) < 0)
@@ -77,10 +76,6 @@ void age_task(task_t* task) {
 }
 
 task_t * scheduler () {
-#ifdef PREEMPCAO
-    readyQueue->quantum=20;
-    return readyQueue;
-#endif
 
     task_t *task = readyQueue; //Primeiro elemento da fila de tarefas prontas
     task_t *taskMaxPrio = task;
@@ -97,7 +92,11 @@ task_t * scheduler () {
             max_priority = task->dynamicPriority;
             taskMaxPrio = task;
         }
-        age_task(task); // Aplica envelhecimento
+        else if (task->dynamicPriority == max_priority) {
+            if (task->staticPriority < taskMaxPrio->staticPriority) {
+                taskMaxPrio = task; // Se as prioridades dinâmicas forem iguais, escolhe a de maior prioridade estática
+            }
+        }
         task = task->next;
     }
     while (task != readyQueue);
@@ -105,21 +104,39 @@ task_t * scheduler () {
    //printf("\nscheduler - Tarefa escolhida [%d] - Prioridade dinâmica: %d - Prioridade estática: %d\n", taskMaxPrio->id, taskMaxPrio->dynamicPriority, taskMaxPrio->staticPriority);
 
    // Para não haver envelhecimento no começo do sistema
-    if (taskMaxPrio->id < 2) {
+    if (taskMaxPrio->id >= 2) {
         task = readyQueue;
         do {
-            task->dynamicPriority = task->staticPriority + 1; // +1 por causa da própria iteração
+            if (task->id >= 2) {
+                age_task(task); // Aplica envelhecimento
+            }
             task = task->next;
         }
         while (task != readyQueue);
     }
+    else {
+        if (queue_size((queue_t*) readyQueue) > 5) {
+            task = readyQueue;
+            do {
+                if (task->id >= 2) {
+                    task->dynamicPriority = task->staticPriority; // Reseta a prioridade dinâmica
+                }
+                task = task->next;
+            }
+            while (task != readyQueue);
+        }
+    }
 
     //PRINT_READY_QUEUE; // Imprime a fila de tarefas prontas
+
+    //printf("Systemtime: %d\n", system_time);
 
     // Remove a tarefa da fila de prontas
     (task_t*) queue_remove((queue_t**) &readyQueue, (queue_t*) taskMaxPrio);
 
     taskMaxPrio->dynamicPriority = taskMaxPrio->staticPriority;
+    taskMaxPrio->quantum = 20; // Reseta o quantum da tarefa escolhida
+    
     // Retorna a tarefa com maior prioridade
     return taskMaxPrio;
 }
