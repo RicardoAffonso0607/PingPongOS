@@ -30,6 +30,10 @@ typedef struct task_t
    int staticPriority; // prioridade estática da tarefa (entre -20 e 20)
    int dynamicPriority; // prioridade dinâmica da tarefa (entre -20 e 20)
    int quantum;
+   int activations;
+   int processor_time;
+   int begin;
+   int end;
 
 } task_t ;
 

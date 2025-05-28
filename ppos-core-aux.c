@@ -31,6 +31,7 @@ void tratador()
     if(taskExec!=taskDisp){
         if(taskExec->quantum>0){
             taskExec->quantum--;
+            taskExec->processor_time++;
         }
 
         if(taskExec->quantum<=0){
@@ -115,7 +116,7 @@ task_t * scheduler () {
         while (task != readyQueue);
     }
     else {
-        if (queue_size((queue_t*) readyQueue) > 5) {
+        if (queue_size((queue_t*) readyQueue) > 5) { // Para não envelhecer no começo
             task = readyQueue;
             do {
                 if (task->id >= 2) {
@@ -136,6 +137,7 @@ task_t * scheduler () {
 
     taskMaxPrio->dynamicPriority = taskMaxPrio->staticPriority;
     taskMaxPrio->quantum = 20; // Reseta o quantum da tarefa escolhida
+    taskMaxPrio->activations++;
     
     // Retorna a tarefa com maior prioridade
     return taskMaxPrio;
@@ -185,6 +187,9 @@ void after_task_create (task_t *task ) {
     task->staticPriority = 0;
     task->dynamicPriority = 0;
     task->quantum=20;
+    task->activations = 0;
+    task->processor_time = 0;
+    task->begin = systime();
 }
 
 void before_task_exit () {
@@ -192,6 +197,12 @@ void before_task_exit () {
 #ifdef DEBUG
     printf("\ntask_exit - BEFORE - [%d]", taskExec->id);
 #endif
+    taskExec->end = systime();
+    printf("\nTask %d exit: execution time %d ms, processor time %d ms, %d activations\n", 
+            taskExec->id, 
+            taskExec->end - taskExec->begin, 
+            taskExec->processor_time, 
+            taskExec->activations); 
 }
 
 void after_task_exit () {
@@ -207,7 +218,14 @@ void before_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - BEFORE - [%d -> %d]", taskExec->id, task->id);
 #endif
-    
+    if (taskExec->id == 1 && task->id == 0) {
+        taskExec->end = systime();
+        printf("\nTask %d exit: execution time %d ms, processor time %d ms, %d activations\n", 
+           taskExec->id, 
+           taskExec->end - taskExec->begin, 
+           taskExec->processor_time, 
+           taskExec->activations); 
+    }
 }
 
 void after_task_switch ( task_t *task ) {
