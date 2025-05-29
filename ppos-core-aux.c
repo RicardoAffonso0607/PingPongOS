@@ -115,18 +115,6 @@ task_t * scheduler () {
         }
         while (task != readyQueue);
     }
-    else {
-        if (queue_size((queue_t*) readyQueue) > 5) { // Para não envelhecer no começo
-            task = readyQueue;
-            do {
-                if (task->id >= 2) {
-                    task->dynamicPriority = task->staticPriority; // Reseta a prioridade dinâmica
-                }
-                task = task->next;
-            }
-            while (task != readyQueue);
-        }
-    }
 
     //PRINT_READY_QUEUE; // Imprime a fila de tarefas prontas
 
@@ -148,6 +136,7 @@ void task_setprio (task_t *task, int prio){
         task = taskExec; 
     }
     task->staticPriority = prio;
+    task->dynamicPriority = prio; 
 }
 
 int task_getprio (task_t *task) {
