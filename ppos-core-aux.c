@@ -15,12 +15,76 @@
 
 #define AGING -1;
 int system_time=0;
-
 // estrutura que define um tratador de sinal (deve ser global ou static)
 struct sigaction action;
-
 // estrutura de inicialização to timer
 struct itimerval timer;
+
+/*============================================================================================================================*/
+// Parte B
+
+disk_t disk; // variavel global que representa o disco do SO
+task_t taskDiskMgr;
+
+int disk_mgr_init (int *numBlocks, int *blockSize){
+    
+    // inicializando o disco virtual
+    disk_cmd (DISK_CMD_INIT, 0, 0);
+
+    //consulta o tamanho do bloco e do disco
+    int disco_tam = disk_cmd (DISK_CMD_DISKSIZE, 0, 0);
+    int bloco_tam = disk_cmd (DISK_CMD_BLOCKSIZE, 0, 0);
+    
+    if(disk_cmd (DISK_CMD_STATUS, 0, 0)==0|| disco_tam<0 || bloco_tam<0)
+        return 1;
+
+    *numBlocks = disco_tam;
+    *blockSize = bloco_tam;
+
+    //inicializando o disco do SO
+    disco.numBlocks = disco_tam;
+    disco.blockSize = bloco_tam;
+    disco.sinal = 0;
+    disco.livre = 1;
+    disco.diskQueue = NULL;
+    disco.requestQueue = NULL;
+    sem_create(&disk.semaforo,1); // inicializa o semaforo
+    sem_create(&disk.semaforo_queue,1);
+
+    // criar 
+
+    // Handler de sinal do disco
+    struct sigaction diskAction;
+    diskAction.sa_handler = disk.sinal=1;
+    sigemptyset(&diskAction.sa_mask);
+    diskAction.sa_flags = 0;
+    if (sigaction(SIGUSR1, &diskAction, NULL) < 0) {
+        perror("Erro em sigaction: ");
+        exit(1);
+    }
+
+    return 0
+
+}
+
+
+int disk_block_read (int block, void *buffer){
+
+}
+
+
+int disk_block_write (int block, void *buffer){
+
+}
+
+
+diskrequest_t* disk_scheduler(){
+
+}
+
+
+/*============================================================================================================================*/
+// Parte A
 
 void tratador()
 {
