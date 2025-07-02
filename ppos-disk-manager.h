@@ -7,8 +7,6 @@
 #ifndef __DISK_MGR__
 #define __DISK_MGR__
 
-#include "disk-driver.h"
-
 //#define DEBUG_DISK 1
 
 // estruturas de dados e rotinas de inicializacao e acesso

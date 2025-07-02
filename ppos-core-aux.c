@@ -4,6 +4,8 @@
 
 #include <signal.h>
 #include <sys/time.h>
+#include <errno.h>
+#include "disk-driver.h"
 
 // ****************************************************************************
 // Adicione TUDO O QUE FOR NECESSARIO para realizar o seu trabalho
@@ -23,63 +25,164 @@ struct itimerval timer;
 /*============================================================================================================================*/
 // Parte B
 
-disk_t disk; // variavel global que representa o disco do SO
-task_t taskDiskMgr;
+disk_t disk; // variavel global que representa o disk do SO   
+
+task_t disk_mgr_task;
+
+struct sigaction d_action;
+
+int pos_cabeca = 0;
+int blocos_percorridos = 0;
+
+void disk_mgr_body (){
+    while (1) {
+        sem_down(&disk.semaforo);
+        if (disk.sinal) {
+            disk.sinal = 0;
+            task_resume(disk.diskQueue);    
+            disk.livre = 1;
+        }
+        if (disk_cmd(DISK_CMD_STATUS, 0, NULL) == 1 && disk.requestQueue) {
+            diskrequest_t* request = disk_scheduler();
+            if (request) {
+                sem_down(&disk.semaforo_queue);
+                queue_remove((queue_t**)&disk.requestQueue, (queue_t*)request);
+                sem_up(&disk.semaforo_queue);
+
+                if (request->operation == 1) {
+                    disk_cmd(DISK_CMD_READ, request->block, request->buffer);
+                    disk.livre = 0;
+                } else if (request->operation == 2) {
+                    disk_cmd(DISK_CMD_WRITE, request->block, request->buffer);
+                    disk.livre = 0;
+                }
+                free(request);  
+            }
+        }
+        sem_up(&disk.semaforo);
+        task_yield();
+    }
+}
+
+void diskSignalHandler(int signum) {
+    disk.sinal = 1;
+}
+
+// Handler para SIGSEGV
+void clean_exit_on_sig(int sig_num) {
+    int err = errno;
+    fprintf(stderr, "\n ERROR[Signal = %d]: %d \"%s\"\n", sig_num, err, strerror(err));
+    exit(err);
+}
 
 int disk_mgr_init (int *numBlocks, int *blockSize){
-    
-    // inicializando o disco virtual
+    // inicializando o disk virtual
     disk_cmd (DISK_CMD_INIT, 0, 0);
 
-    //consulta o tamanho do bloco e do disco
-    int disco_tam = disk_cmd (DISK_CMD_DISKSIZE, 0, 0);
-    int bloco_tam = disk_cmd (DISK_CMD_BLOCKSIZE, 0, 0);
+    //consulta o tamanho do bloco e do disk
+    *numBlocks = disk_cmd (DISK_CMD_DISKSIZE, 0, 0);
+    *blockSize = disk_cmd (DISK_CMD_BLOCKSIZE, 0, 0);
     
-    if(disk_cmd (DISK_CMD_STATUS, 0, 0)==0|| disco_tam<0 || bloco_tam<0)
+    if(disk_cmd (DISK_CMD_STATUS, 0, 0)==0|| *numBlocks<0 || *blockSize<0)
         return 1;
 
-    *numBlocks = disco_tam;
-    *blockSize = bloco_tam;
-
-    //inicializando o disco do SO
-    disco.numBlocks = disco_tam;
-    disco.blockSize = bloco_tam;
-    disco.sinal = 0;
-    disco.livre = 1;
-    disco.diskQueue = NULL;
-    disco.requestQueue = NULL;
+    //inicializando o disk do SO
+    disk.numBlocks = *numBlocks;
+    disk.blockSize = *blockSize;
+    disk.sinal = 0;
+    disk.livre = 1;
+    disk.diskQueue = NULL;
+    disk.requestQueue = NULL;
     sem_create(&disk.semaforo,1); // inicializa o semaforo
     sem_create(&disk.semaforo_queue,1);
 
-    // criar 
-
-    // Handler de sinal do disco
-    struct sigaction diskAction;
-    diskAction.sa_handler = disk.sinal=1;
-    sigemptyset(&diskAction.sa_mask);
-    diskAction.sa_flags = 0;
-    if (sigaction(SIGUSR1, &diskAction, NULL) < 0) {
+    // Handler do sinal do disk
+    d_action.sa_handler = diskSignalHandler;
+    sigemptyset(&d_action.sa_mask);   
+    d_action.sa_flags = 0;
+    if (sigaction(SIGUSR1, &d_action, NULL) < 0) {
         perror("Erro em sigaction: ");
         exit(1);
     }
+    signal(SIGSEGV, clean_exit_on_sig);
 
-    return 0
+    task_create(&disk_mgr_task, disk_mgr_body, NULL);
 
-}
+    return 0;   
+}   
+
 
 
 int disk_block_read (int block, void *buffer){
+    if (sem_down(&disk.semaforo) < 0)
+        return -1;
+    // cria um request de leitura
+    diskrequest_t* request = malloc(sizeof(diskrequest_t));
+    request->operation = DISK_CMD_READ; // leitura
+    request->block = block;
+    request->buffer = buffer;
+    request->next = request->prev = NULL;
+    request->task = taskExec;
 
+    // coloca o request na fila
+    sem_down(&disk.semaforo_queue);
+    queue_append((queue_t**)&disk.requestQueue, (queue_t*)request);
+    sem_up(&disk.semaforo_queue);
+    
+
+
+    sem_up(&disk.semaforo);
+
+    task_suspend(taskExec, &disk.diskQueue);
+    task_yield();
+
+
+    printf("CHEGOU AQUI!!!!!!!!!!!!\n");
+    return 0;
 }
 
 
 int disk_block_write (int block, void *buffer){
+    if (sem_down(&disk.semaforo) < 0)
+        return -1;
 
+    // cria um request de escrita
+    diskrequest_t* request = malloc(sizeof(diskrequest_t));
+    request->operation = DISK_CMD_WRITE; // escrita
+    request->block = block;
+    request->buffer = buffer;
+    request->next = request->prev = NULL;
+    request->task = taskExec;
+
+    // coloca o request na fila
+    sem_down(&disk.semaforo_queue);
+    queue_append((queue_t**)&disk.requestQueue, (queue_t*)request);
+    sem_up(&disk.semaforo_queue);
+
+    // faz a tarefa executar se ela estava suspensa
+    if (disk_mgr_task.state == 'S')
+        task_resume(&disk_mgr_task);
+
+    sem_up(&disk.semaforo);
+
+    task_suspend(taskExec, &disk.diskQueue);
+    task_yield();
+
+    return 0;
 }
 
 
 diskrequest_t* disk_scheduler(){
+    if(!disk.requestQueue)
+        return NULL;
+    
+    diskrequest_t* request = disk.requestQueue;
+    int distancia = abs(request->block- pos_cabeca);
 
+    blocos_percorridos += distancia;
+    pos_cabeca = request->block;
+
+    return request;
 }
 
 
