@@ -1,0 +1,1029 @@
+    0 ms: main inicio
+    0 ms: disco contem 256 blocos de 64 bytes cada
+    0 ms: lendo bloco 0
+   37 ms: buffer: [<--bloco 0000------------------------------------------------->
+]
+   37 ms: lendo bloco 1
+   69 ms: buffer: [<--bloco 0001------------------------------------------------->
+]
+   69 ms: lendo bloco 2
+  120 ms: buffer: [<--bloco 0002------------------------------------------------->
+]
+  120 ms: lendo bloco 3
+  153 ms: buffer: [<--bloco 0003------------------------------------------------->
+]
+  153 ms: lendo bloco 4
+  204 ms: buffer: [<--bloco 0004------------------------------------------------->
+]
+  204 ms: lendo bloco 5
+  237 ms: buffer: [<--bloco 0005------------------------------------------------->
+]
+  237 ms: lendo bloco 6
+  272 ms: buffer: [<--bloco 0006------------------------------------------------->
+]
+  273 ms: lendo bloco 7
+  305 ms: buffer: [<--bloco 0007------------------------------------------------->
+]
+  305 ms: lendo bloco 8
+  360 ms: buffer: [<--bloco 0008------------------------------------------------->
+]
+  360 ms: lendo bloco 9
+  400 ms: buffer: [<--bloco 0009------------------------------------------------->
+]
+  400 ms: lendo bloco 10
+  452 ms: buffer: [<--bloco 0010------------------------------------------------->
+]
+  452 ms: lendo bloco 11
+  507 ms: buffer: [<--bloco 0011------------------------------------------------->
+]
+  507 ms: lendo bloco 12
+  552 ms: buffer: [<--bloco 0012------------------------------------------------->
+]
+  552 ms: lendo bloco 13
+  599 ms: buffer: [<--bloco 0013------------------------------------------------->
+]
+  600 ms: lendo bloco 14
+  642 ms: buffer: [<--bloco 0014------------------------------------------------->
+]
+  642 ms: lendo bloco 15
+  689 ms: buffer: [<--bloco 0015------------------------------------------------->
+]
+  689 ms: lendo bloco 16
+  726 ms: buffer: [<--bloco 0016------------------------------------------------->
+]
+  726 ms: lendo bloco 17
+  778 ms: buffer: [<--bloco 0017------------------------------------------------->
+]
+  778 ms: lendo bloco 18
+  814 ms: buffer: [<--bloco 0018------------------------------------------------->
+]
+  814 ms: lendo bloco 19
+  868 ms: buffer: [<--bloco 0019------------------------------------------------->
+]
+  869 ms: lendo bloco 20
+  925 ms: buffer: [<--bloco 0020------------------------------------------------->
+]
+  925 ms: lendo bloco 21
+  974 ms: buffer: [<--bloco 0021------------------------------------------------->
+]
+  974 ms: lendo bloco 22
+ 1031 ms: buffer: [<--bloco 0022------------------------------------------------->
+]
+ 1032 ms: lendo bloco 23
+ 1087 ms: buffer: [<--bloco 0023------------------------------------------------->
+]
+ 1087 ms: lendo bloco 24
+ 1133 ms: buffer: [<--bloco 0024------------------------------------------------->
+]
+ 1133 ms: lendo bloco 25
+ 1181 ms: buffer: [<--bloco 0025------------------------------------------------->
+]
+ 1181 ms: lendo bloco 26
+ 1236 ms: buffer: [<--bloco 0026------------------------------------------------->
+]
+ 1236 ms: lendo bloco 27
+ 1277 ms: buffer: [<--bloco 0027------------------------------------------------->
+]
+ 1277 ms: lendo bloco 28
+ 1311 ms: buffer: [<--bloco 0028------------------------------------------------->
+]
+ 1311 ms: lendo bloco 29
+ 1357 ms: buffer: [<--bloco 0029------------------------------------------------->
+]
+ 1357 ms: lendo bloco 30
+ 1393 ms: buffer: [<--bloco 0030------------------------------------------------->
+]
+ 1393 ms: lendo bloco 31
+ 1431 ms: buffer: [<--bloco 0031------------------------------------------------->
+]
+ 1431 ms: lendo bloco 32
+ 1478 ms: buffer: [<--bloco 0032------------------------------------------------->
+]
+ 1478 ms: lendo bloco 33
+ 1531 ms: buffer: [<--bloco 0033------------------------------------------------->
+]
+ 1531 ms: lendo bloco 34
+ 1567 ms: buffer: [<--bloco 0034------------------------------------------------->
+]
+ 1567 ms: lendo bloco 35
+ 1604 ms: buffer: [<--bloco 0035------------------------------------------------->
+]
+ 1604 ms: lendo bloco 36
+ 1660 ms: buffer: [<--bloco 0036------------------------------------------------->
+]
+ 1660 ms: lendo bloco 37
+ 1701 ms: buffer: [<--bloco 0037------------------------------------------------->
+]
+ 1701 ms: lendo bloco 38
+ 1735 ms: buffer: [<--bloco 0038------------------------------------------------->
+]
+ 1735 ms: lendo bloco 39
+ 1789 ms: buffer: [<--bloco 0039------------------------------------------------->
+]
+ 1789 ms: lendo bloco 40
+ 1835 ms: buffer: [<--bloco 0040------------------------------------------------->
+]
+ 1835 ms: lendo bloco 41
+ 1890 ms: buffer: [<--bloco 0041------------------------------------------------->
+]
+ 1890 ms: lendo bloco 42
+ 1938 ms: buffer: [<--bloco 0042------------------------------------------------->
+]
+ 1939 ms: lendo bloco 43
+ 1972 ms: buffer: [<--bloco 0043------------------------------------------------->
+]
+ 1972 ms: lendo bloco 44
+ 2013 ms: buffer: [<--bloco 0044------------------------------------------------->
+]
+ 2013 ms: lendo bloco 45
+ 2068 ms: buffer: [<--bloco 0045------------------------------------------------->
+]
+ 2068 ms: lendo bloco 46
+ 2114 ms: buffer: [<--bloco 0046------------------------------------------------->
+]
+ 2114 ms: lendo bloco 47
+ 2161 ms: buffer: [<--bloco 0047------------------------------------------------->
+]
+ 2161 ms: lendo bloco 48
+ 2207 ms: buffer: [<--bloco 0048------------------------------------------------->
+]
+ 2207 ms: lendo bloco 49
+ 2259 ms: buffer: [<--bloco 0049------------------------------------------------->
+]
+ 2259 ms: lendo bloco 50
+ 2298 ms: buffer: [<--bloco 0050------------------------------------------------->
+]
+ 2299 ms: lendo bloco 51
+ 2343 ms: buffer: [<--bloco 0051------------------------------------------------->
+]
+ 2343 ms: lendo bloco 52
+ 2383 ms: buffer: [<--bloco 0052------------------------------------------------->
+]
+ 2383 ms: lendo bloco 53
+ 2422 ms: buffer: [<--bloco 0053------------------------------------------------->
+]
+ 2422 ms: lendo bloco 54
+ 2464 ms: buffer: [<--bloco 0054------------------------------------------------->
+]
+ 2464 ms: lendo bloco 55
+ 2519 ms: buffer: [<--bloco 0055------------------------------------------------->
+]
+ 2519 ms: lendo bloco 56
+ 2571 ms: buffer: [<--bloco 0056------------------------------------------------->
+]
+ 2571 ms: lendo bloco 57
+ 2607 ms: buffer: [<--bloco 0057------------------------------------------------->
+]
+ 2607 ms: lendo bloco 58
+ 2645 ms: buffer: [<--bloco 0058------------------------------------------------->
+]
+ 2646 ms: lendo bloco 59
+ 2698 ms: buffer: [<--bloco 0059------------------------------------------------->
+]
+ 2698 ms: lendo bloco 60
+ 2748 ms: buffer: [<--bloco 0060------------------------------------------------->
+]
+ 2748 ms: lendo bloco 61
+ 2792 ms: buffer: [<--bloco 0061------------------------------------------------->
+]
+ 2792 ms: lendo bloco 62
+ 2824 ms: buffer: [<--bloco 0062------------------------------------------------->
+]
+ 2824 ms: lendo bloco 63
+ 2863 ms: buffer: [<--bloco 0063------------------------------------------------->
+]
+ 2863 ms: lendo bloco 64
+ 2899 ms: buffer: [<--bloco 0064------------------------------------------------->
+]
+ 2899 ms: lendo bloco 65
+ 2933 ms: buffer: [<--bloco 0065------------------------------------------------->
+]
+ 2933 ms: lendo bloco 66
+ 2974 ms: buffer: [<--bloco 0066------------------------------------------------->
+]
+ 2975 ms: lendo bloco 67
+ 3009 ms: buffer: [<--bloco 0067------------------------------------------------->
+]
+ 3009 ms: lendo bloco 68
+ 3050 ms: buffer: [<--bloco 0068------------------------------------------------->
+]
+ 3050 ms: lendo bloco 69
+ 3094 ms: buffer: [<--bloco 0069------------------------------------------------->
+]
+ 3094 ms: lendo bloco 70
+ 3148 ms: buffer: [<--bloco 0070------------------------------------------------->
+]
+ 3148 ms: lendo bloco 71
+ 3201 ms: buffer: [<--bloco 0071------------------------------------------------->
+]
+ 3201 ms: lendo bloco 72
+ 3239 ms: buffer: [<--bloco 0072------------------------------------------------->
+]
+ 3239 ms: lendo bloco 73
+ 3283 ms: buffer: [<--bloco 0073------------------------------------------------->
+]
+ 3283 ms: lendo bloco 74
+ 3339 ms: buffer: [<--bloco 0074------------------------------------------------->
+]
+ 3340 ms: lendo bloco 75
+ 3388 ms: buffer: [<--bloco 0075------------------------------------------------->
+]
+ 3388 ms: lendo bloco 76
+ 3426 ms: buffer: [<--bloco 0076------------------------------------------------->
+]
+ 3426 ms: lendo bloco 77
+ 3467 ms: buffer: [<--bloco 0077------------------------------------------------->
+]
+ 3467 ms: lendo bloco 78
+ 3501 ms: buffer: [<--bloco 0078------------------------------------------------->
+]
+ 3501 ms: lendo bloco 79
+ 3555 ms: buffer: [<--bloco 0079------------------------------------------------->
+]
+ 3555 ms: lendo bloco 80
+ 3586 ms: buffer: [<--bloco 0080------------------------------------------------->
+]
+ 3586 ms: lendo bloco 81
+ 3624 ms: buffer: [<--bloco 0081------------------------------------------------->
+]
+ 3624 ms: lendo bloco 82
+ 3664 ms: buffer: [<--bloco 0082------------------------------------------------->
+]
+ 3665 ms: lendo bloco 83
+ 3705 ms: buffer: [<--bloco 0083------------------------------------------------->
+]
+ 3705 ms: lendo bloco 84
+ 3751 ms: buffer: [<--bloco 0084------------------------------------------------->
+]
+ 3751 ms: lendo bloco 85
+ 3799 ms: buffer: [<--bloco 0085------------------------------------------------->
+]
+ 3799 ms: lendo bloco 86
+ 3833 ms: buffer: [<--bloco 0086------------------------------------------------->
+]
+ 3833 ms: lendo bloco 87
+ 3874 ms: buffer: [<--bloco 0087------------------------------------------------->
+]
+ 3874 ms: lendo bloco 88
+ 3927 ms: buffer: [<--bloco 0088------------------------------------------------->
+]
+ 3927 ms: lendo bloco 89
+ 3968 ms: buffer: [<--bloco 0089------------------------------------------------->
+]
+ 3968 ms: lendo bloco 90
+ 4003 ms: buffer: [<--bloco 0090------------------------------------------------->
+]
+ 4003 ms: lendo bloco 91
+ 4050 ms: buffer: [<--bloco 0091------------------------------------------------->
+]
+ 4050 ms: lendo bloco 92
+ 4101 ms: buffer: [<--bloco 0092------------------------------------------------->
+]
+ 4101 ms: lendo bloco 93
+ 4133 ms: buffer: [<--bloco 0093------------------------------------------------->
+]
+ 4133 ms: lendo bloco 94
+ 4183 ms: buffer: [<--bloco 0094------------------------------------------------->
+]
+ 4183 ms: lendo bloco 95
+ 4240 ms: buffer: [<--bloco 0095------------------------------------------------->
+]
+ 4240 ms: lendo bloco 96
+ 4272 ms: buffer: [<--bloco 0096------------------------------------------------->
+]
+ 4272 ms: lendo bloco 97
+ 4306 ms: buffer: [<--bloco 0097------------------------------------------------->
+]
+ 4306 ms: lendo bloco 98
+ 4363 ms: buffer: [<--bloco 0098------------------------------------------------->
+]
+ 4363 ms: lendo bloco 99
+ 4405 ms: buffer: [<--bloco 0099------------------------------------------------->
+]
+ 4406 ms: lendo bloco 100
+ 4450 ms: buffer: [<--bloco 0100------------------------------------------------->
+]
+ 4450 ms: lendo bloco 101
+ 4500 ms: buffer: [<--bloco 0101------------------------------------------------->
+]
+ 4500 ms: lendo bloco 102
+ 4538 ms: buffer: [<--bloco 0102------------------------------------------------->
+]
+ 4538 ms: lendo bloco 103
+ 4589 ms: buffer: [<--bloco 0103------------------------------------------------->
+]
+ 4589 ms: lendo bloco 104
+ 4621 ms: buffer: [<--bloco 0104------------------------------------------------->
+]
+ 4621 ms: lendo bloco 105
+ 4654 ms: buffer: [<--bloco 0105------------------------------------------------->
+]
+ 4654 ms: lendo bloco 106
+ 4692 ms: buffer: [<--bloco 0106------------------------------------------------->
+]
+ 4693 ms: lendo bloco 107
+ 4733 ms: buffer: [<--bloco 0107------------------------------------------------->
+]
+ 4733 ms: lendo bloco 108
+ 4772 ms: buffer: [<--bloco 0108------------------------------------------------->
+]
+ 4772 ms: lendo bloco 109
+ 4810 ms: buffer: [<--bloco 0109------------------------------------------------->
+]
+ 4810 ms: lendo bloco 110
+ 4846 ms: buffer: [<--bloco 0110------------------------------------------------->
+]
+ 4846 ms: lendo bloco 111
+ 4882 ms: buffer: [<--bloco 0111------------------------------------------------->
+]
+ 4882 ms: lendo bloco 112
+ 4928 ms: buffer: [<--bloco 0112------------------------------------------------->
+]
+ 4928 ms: lendo bloco 113
+ 4970 ms: buffer: [<--bloco 0113------------------------------------------------->
+]
+ 4971 ms: lendo bloco 114
+ 5013 ms: buffer: [<--bloco 0114------------------------------------------------->
+]
+ 5013 ms: lendo bloco 115
+ 5044 ms: buffer: [<--bloco 0115------------------------------------------------->
+]
+ 5044 ms: lendo bloco 116
+ 5076 ms: buffer: [<--bloco 0116------------------------------------------------->
+]
+ 5076 ms: lendo bloco 117
+ 5121 ms: buffer: [<--bloco 0117------------------------------------------------->
+]
+ 5121 ms: lendo bloco 118
+ 5158 ms: buffer: [<--bloco 0118------------------------------------------------->
+]
+ 5158 ms: lendo bloco 119
+ 5212 ms: buffer: [<--bloco 0119------------------------------------------------->
+]
+ 5212 ms: lendo bloco 120
+ 5265 ms: buffer: [<--bloco 0120------------------------------------------------->
+]
+ 5266 ms: lendo bloco 121
+ 5303 ms: buffer: [<--bloco 0121------------------------------------------------->
+]
+ 5303 ms: lendo bloco 122
+ 5342 ms: buffer: [<--bloco 0122------------------------------------------------->
+]
+ 5342 ms: lendo bloco 123
+ 5388 ms: buffer: [<--bloco 0123------------------------------------------------->
+]
+ 5388 ms: lendo bloco 124
+ 5427 ms: buffer: [<--bloco 0124------------------------------------------------->
+]
+ 5427 ms: lendo bloco 125
+ 5459 ms: buffer: [<--bloco 0125------------------------------------------------->
+]
+ 5459 ms: lendo bloco 126
+ 5501 ms: buffer: [<--bloco 0126------------------------------------------------->
+]
+ 5501 ms: lendo bloco 127
+ 5538 ms: buffer: [<--bloco 0127------------------------------------------------->
+]
+ 5539 ms: lendo bloco 128
+ 5570 ms: buffer: [<--bloco 0128------------------------------------------------->
+]
+ 5570 ms: lendo bloco 129
+ 5607 ms: buffer: [<--bloco 0129------------------------------------------------->
+]
+ 5607 ms: lendo bloco 130
+ 5652 ms: buffer: [<--bloco 0130------------------------------------------------->
+]
+ 5652 ms: lendo bloco 131
+ 5693 ms: buffer: [<--bloco 0131------------------------------------------------->
+]
+ 5693 ms: lendo bloco 132
+ 5749 ms: buffer: [<--bloco 0132------------------------------------------------->
+]
+ 5749 ms: lendo bloco 133
+ 5798 ms: buffer: [<--bloco 0133------------------------------------------------->
+]
+ 5798 ms: lendo bloco 134
+ 5829 ms: buffer: [<--bloco 0134------------------------------------------------->
+]
+ 5830 ms: lendo bloco 135
+ 5861 ms: buffer: [<--bloco 0135------------------------------------------------->
+]
+ 5861 ms: lendo bloco 136
+ 5908 ms: buffer: [<--bloco 0136------------------------------------------------->
+]
+ 5908 ms: lendo bloco 137
+ 5947 ms: buffer: [<--bloco 0137------------------------------------------------->
+]
+ 5947 ms: lendo bloco 138
+ 5983 ms: buffer: [<--bloco 0138------------------------------------------------->
+]
+ 5983 ms: lendo bloco 139
+ 6039 ms: buffer: [<--bloco 0139------------------------------------------------->
+]
+ 6039 ms: lendo bloco 140
+ 6081 ms: buffer: [<--bloco 0140------------------------------------------------->
+]
+ 6082 ms: lendo bloco 141
+ 6124 ms: buffer: [<--bloco 0141------------------------------------------------->
+]
+ 6124 ms: lendo bloco 142
+ 6155 ms: buffer: [<--bloco 0142------------------------------------------------->
+]
+ 6155 ms: lendo bloco 143
+ 6212 ms: buffer: [<--bloco 0143------------------------------------------------->
+]
+ 6212 ms: lendo bloco 144
+ 6261 ms: buffer: [<--bloco 0144------------------------------------------------->
+]
+ 6261 ms: lendo bloco 145
+ 6303 ms: buffer: [<--bloco 0145------------------------------------------------->
+]
+ 6303 ms: lendo bloco 146
+ 6334 ms: buffer: [<--bloco 0146------------------------------------------------->
+]
+ 6334 ms: lendo bloco 147
+ 6384 ms: buffer: [<--bloco 0147------------------------------------------------->
+]
+ 6385 ms: lendo bloco 148
+ 6442 ms: buffer: [<--bloco 0148------------------------------------------------->
+]
+ 6442 ms: lendo bloco 149
+ 6479 ms: buffer: [<--bloco 0149------------------------------------------------->
+]
+ 6479 ms: lendo bloco 150
+ 6523 ms: buffer: [<--bloco 0150------------------------------------------------->
+]
+ 6523 ms: lendo bloco 151
+ 6575 ms: buffer: [<--bloco 0151------------------------------------------------->
+]
+ 6575 ms: lendo bloco 152
+ 6615 ms: buffer: [<--bloco 0152------------------------------------------------->
+]
+ 6615 ms: lendo bloco 153
+ 6663 ms: buffer: [<--bloco 0153------------------------------------------------->
+]
+ 6663 ms: lendo bloco 154
+ 6700 ms: buffer: [<--bloco 0154------------------------------------------------->
+]
+ 6700 ms: lendo bloco 155
+ 6745 ms: buffer: [<--bloco 0155------------------------------------------------->
+]
+ 6746 ms: lendo bloco 156
+ 6791 ms: buffer: [<--bloco 0156------------------------------------------------->
+]
+ 6791 ms: lendo bloco 157
+ 6836 ms: buffer: [<--bloco 0157------------------------------------------------->
+]
+ 6836 ms: lendo bloco 158
+ 6888 ms: buffer: [<--bloco 0158------------------------------------------------->
+]
+ 6888 ms: lendo bloco 159
+ 6934 ms: buffer: [<--bloco 0159------------------------------------------------->
+]
+ 6934 ms: lendo bloco 160
+ 6985 ms: buffer: [<--bloco 0160------------------------------------------------->
+]
+ 6985 ms: lendo bloco 161
+ 7024 ms: buffer: [<--bloco 0161------------------------------------------------->
+]
+ 7024 ms: lendo bloco 162
+ 7077 ms: buffer: [<--bloco 0162------------------------------------------------->
+]
+ 7077 ms: lendo bloco 163
+ 7123 ms: buffer: [<--bloco 0163------------------------------------------------->
+]
+ 7124 ms: lendo bloco 164
+ 7155 ms: buffer: [<--bloco 0164------------------------------------------------->
+]
+ 7155 ms: lendo bloco 165
+ 7209 ms: buffer: [<--bloco 0165------------------------------------------------->
+]
+ 7209 ms: lendo bloco 166
+ 7256 ms: buffer: [<--bloco 0166------------------------------------------------->
+]
+ 7256 ms: lendo bloco 167
+ 7300 ms: buffer: [<--bloco 0167------------------------------------------------->
+]
+ 7300 ms: lendo bloco 168
+ 7335 ms: buffer: [<--bloco 0168------------------------------------------------->
+]
+ 7335 ms: lendo bloco 169
+ 7384 ms: buffer: [<--bloco 0169------------------------------------------------->
+]
+ 7384 ms: lendo bloco 170
+ 7426 ms: buffer: [<--bloco 0170------------------------------------------------->
+]
+ 7426 ms: lendo bloco 171
+ 7470 ms: buffer: [<--bloco 0171------------------------------------------------->
+]
+ 7470 ms: lendo bloco 172
+ 7526 ms: buffer: [<--bloco 0172------------------------------------------------->
+]
+ 7526 ms: lendo bloco 173
+ 7568 ms: buffer: [<--bloco 0173------------------------------------------------->
+]
+ 7568 ms: lendo bloco 174
+ 7611 ms: buffer: [<--bloco 0174------------------------------------------------->
+]
+ 7611 ms: lendo bloco 175
+ 7659 ms: buffer: [<--bloco 0175------------------------------------------------->
+]
+ 7659 ms: lendo bloco 176
+ 7709 ms: buffer: [<--bloco 0176------------------------------------------------->
+]
+ 7709 ms: lendo bloco 177
+ 7748 ms: buffer: [<--bloco 0177------------------------------------------------->
+]
+ 7748 ms: lendo bloco 178
+ 7788 ms: buffer: [<--bloco 0178------------------------------------------------->
+]
+ 7789 ms: lendo bloco 179
+ 7839 ms: buffer: [<--bloco 0179------------------------------------------------->
+]
+ 7839 ms: lendo bloco 180
+ 7881 ms: buffer: [<--bloco 0180------------------------------------------------->
+]
+ 7881 ms: lendo bloco 181
+ 7931 ms: buffer: [<--bloco 0181------------------------------------------------->
+]
+ 7931 ms: lendo bloco 182
+ 7972 ms: buffer: [<--bloco 0182------------------------------------------------->
+]
+ 7972 ms: lendo bloco 183
+ 8023 ms: buffer: [<--bloco 0183------------------------------------------------->
+]
+ 8023 ms: lendo bloco 184
+ 8063 ms: buffer: [<--bloco 0184------------------------------------------------->
+]
+ 8063 ms: lendo bloco 185
+ 8107 ms: buffer: [<--bloco 0185------------------------------------------------->
+]
+ 8107 ms: lendo bloco 186
+ 8146 ms: buffer: [<--bloco 0186------------------------------------------------->
+]
+ 8147 ms: lendo bloco 187
+ 8202 ms: buffer: [<--bloco 0187------------------------------------------------->
+]
+ 8202 ms: lendo bloco 188
+ 8233 ms: buffer: [<--bloco 0188------------------------------------------------->
+]
+ 8233 ms: lendo bloco 189
+ 8266 ms: buffer: [<--bloco 0189------------------------------------------------->
+]
+ 8266 ms: lendo bloco 190
+ 8305 ms: buffer: [<--bloco 0190------------------------------------------------->
+]
+ 8305 ms: lendo bloco 191
+ 8357 ms: buffer: [<--bloco 0191------------------------------------------------->
+]
+ 8357 ms: lendo bloco 192
+ 8395 ms: buffer: [<--bloco 0192------------------------------------------------->
+]
+ 8396 ms: lendo bloco 193
+ 8431 ms: buffer: [<--bloco 0193------------------------------------------------->
+]
+ 8431 ms: lendo bloco 194
+ 8468 ms: buffer: [<--bloco 0194------------------------------------------------->
+]
+ 8468 ms: lendo bloco 195
+ 8502 ms: buffer: [<--bloco 0195------------------------------------------------->
+]
+ 8502 ms: lendo bloco 196
+ 8533 ms: buffer: [<--bloco 0196------------------------------------------------->
+]
+ 8533 ms: lendo bloco 197
+ 8587 ms: buffer: [<--bloco 0197------------------------------------------------->
+]
+ 8587 ms: lendo bloco 198
+ 8634 ms: buffer: [<--bloco 0198------------------------------------------------->
+]
+ 8635 ms: lendo bloco 199
+ 8666 ms: buffer: [<--bloco 0199------------------------------------------------->
+]
+ 8666 ms: lendo bloco 200
+ 8711 ms: buffer: [<--bloco 0200------------------------------------------------->
+]
+ 8711 ms: lendo bloco 201
+ 8766 ms: buffer: [<--bloco 0201------------------------------------------------->
+]
+ 8766 ms: lendo bloco 202
+ 8810 ms: buffer: [<--bloco 0202------------------------------------------------->
+]
+ 8810 ms: lendo bloco 203
+ 8854 ms: buffer: [<--bloco 0203------------------------------------------------->
+]
+ 8854 ms: lendo bloco 204
+ 8891 ms: buffer: [<--bloco 0204------------------------------------------------->
+]
+ 8891 ms: lendo bloco 205
+ 8943 ms: buffer: [<--bloco 0205------------------------------------------------->
+]
+ 8943 ms: lendo bloco 206
+ 9000 ms: buffer: [<--bloco 0206------------------------------------------------->
+]
+ 9000 ms: lendo bloco 207
+ 9056 ms: buffer: [<--bloco 0207------------------------------------------------->
+]
+ 9056 ms: lendo bloco 208
+ 9090 ms: buffer: [<--bloco 0208------------------------------------------------->
+]
+ 9090 ms: lendo bloco 209
+ 9126 ms: buffer: [<--bloco 0209------------------------------------------------->
+]
+ 9127 ms: lendo bloco 210
+ 9171 ms: buffer: [<--bloco 0210------------------------------------------------->
+]
+ 9171 ms: lendo bloco 211
+ 9212 ms: buffer: [<--bloco 0211------------------------------------------------->
+]
+ 9212 ms: lendo bloco 212
+ 9267 ms: buffer: [<--bloco 0212------------------------------------------------->
+]
+ 9267 ms: lendo bloco 213
+ 9318 ms: buffer: [<--bloco 0213------------------------------------------------->
+]
+ 9318 ms: lendo bloco 214
+ 9353 ms: buffer: [<--bloco 0214------------------------------------------------->
+]
+ 9353 ms: lendo bloco 215
+ 9387 ms: buffer: [<--bloco 0215------------------------------------------------->
+]
+ 9387 ms: lendo bloco 216
+ 9425 ms: buffer: [<--bloco 0216------------------------------------------------->
+]
+ 9426 ms: lendo bloco 217
+ 9466 ms: buffer: [<--bloco 0217------------------------------------------------->
+]
+ 9466 ms: lendo bloco 218
+ 9521 ms: buffer: [<--bloco 0218------------------------------------------------->
+]
+ 9521 ms: lendo bloco 219
+ 9560 ms: buffer: [<--bloco 0219------------------------------------------------->
+]
+ 9560 ms: lendo bloco 220
+ 9599 ms: buffer: [<--bloco 0220------------------------------------------------->
+]
+ 9599 ms: lendo bloco 221
+ 9635 ms: buffer: [<--bloco 0221------------------------------------------------->
+]
+ 9635 ms: lendo bloco 222
+ 9692 ms: buffer: [<--bloco 0222------------------------------------------------->
+]
+ 9693 ms: lendo bloco 223
+ 9739 ms: buffer: [<--bloco 0223------------------------------------------------->
+]
+ 9739 ms: lendo bloco 224
+ 9776 ms: buffer: [<--bloco 0224------------------------------------------------->
+]
+ 9776 ms: lendo bloco 225
+ 9813 ms: buffer: [<--bloco 0225------------------------------------------------->
+]
+ 9813 ms: lendo bloco 226
+ 9859 ms: buffer: [<--bloco 0226------------------------------------------------->
+]
+ 9859 ms: lendo bloco 227
+ 9892 ms: buffer: [<--bloco 0227------------------------------------------------->
+]
+ 9892 ms: lendo bloco 228
+ 9949 ms: buffer: [<--bloco 0228------------------------------------------------->
+]
+ 9949 ms: lendo bloco 229
+ 9981 ms: buffer: [<--bloco 0229------------------------------------------------->
+]
+ 9981 ms: lendo bloco 230
+10015 ms: buffer: [<--bloco 0230------------------------------------------------->
+]
+10015 ms: lendo bloco 231
+10055 ms: buffer: [<--bloco 0231------------------------------------------------->
+]
+10055 ms: lendo bloco 232
+10108 ms: buffer: [<--bloco 0232------------------------------------------------->
+]
+10108 ms: lendo bloco 233
+10152 ms: buffer: [<--bloco 0233------------------------------------------------->
+]
+10153 ms: lendo bloco 234
+10202 ms: buffer: [<--bloco 0234------------------------------------------------->
+]
+10202 ms: lendo bloco 235
+10256 ms: buffer: [<--bloco 0235------------------------------------------------->
+]
+10256 ms: lendo bloco 236
+10291 ms: buffer: [<--bloco 0236------------------------------------------------->
+]
+10291 ms: lendo bloco 237
+10340 ms: buffer: [<--bloco 0237------------------------------------------------->
+]
+10340 ms: lendo bloco 238
+10392 ms: buffer: [<--bloco 0238------------------------------------------------->
+]
+10392 ms: lendo bloco 239
+10428 ms: buffer: [<--bloco 0239------------------------------------------------->
+]
+10428 ms: lendo bloco 240
+10483 ms: buffer: [<--bloco 0240------------------------------------------------->
+]
+10483 ms: lendo bloco 241
+10518 ms: buffer: [<--bloco 0241------------------------------------------------->
+]
+10518 ms: lendo bloco 242
+10563 ms: buffer: [<--bloco 0242------------------------------------------------->
+]
+10563 ms: lendo bloco 243
+10612 ms: buffer: [<--bloco 0243------------------------------------------------->
+]
+10613 ms: lendo bloco 244
+10669 ms: buffer: [<--bloco 0244------------------------------------------------->
+]
+10669 ms: lendo bloco 245
+10715 ms: buffer: [<--bloco 0245------------------------------------------------->
+]
+10715 ms: lendo bloco 246
+10768 ms: buffer: [<--bloco 0246------------------------------------------------->
+]
+10768 ms: lendo bloco 247
+10801 ms: buffer: [<--bloco 0247------------------------------------------------->
+]
+10801 ms: lendo bloco 248
+10857 ms: buffer: [<--bloco 0248------------------------------------------------->
+]
+10857 ms: lendo bloco 249
+10907 ms: buffer: [<--bloco 0249------------------------------------------------->
+]
+10908 ms: lendo bloco 250
+10949 ms: buffer: [<--bloco 0250------------------------------------------------->
+]
+10949 ms: lendo bloco 251
+10986 ms: buffer: [<--bloco 0251------------------------------------------------->
+]
+10986 ms: lendo bloco 252
+11038 ms: buffer: [<--bloco 0252------------------------------------------------->
+]
+11038 ms: lendo bloco 253
+11075 ms: buffer: [<--bloco 0253------------------------------------------------->
+]
+11075 ms: lendo bloco 254
+11123 ms: buffer: [<--bloco 0254------------------------------------------------->
+]
+11123 ms: lendo bloco 255
+11154 ms: buffer: [<--bloco 0255------------------------------------------------->
+]
+11155 ms: escrevendo bloco 0 com caracteres "L"
+11473 ms: escrevendo bloco 1 com caracteres "N"
+11511 ms: escrevendo bloco 2 com caracteres "9"
+11563 ms: escrevendo bloco 3 com caracteres "N"
+11621 ms: escrevendo bloco 4 com caracteres "6"
+11671 ms: escrevendo bloco 5 com caracteres "I"
+11723 ms: escrevendo bloco 6 com caracteres "+"
+11757 ms: escrevendo bloco 7 com caracteres "*"
+11794 ms: escrevendo bloco 8 com caracteres "-"
+11846 ms: escrevendo bloco 9 com caracteres ","
+11893 ms: escrevendo bloco 10 com caracteres "?"
+11938 ms: escrevendo bloco 11 com caracteres "-"
+11996 ms: escrevendo bloco 12 com caracteres "I"
+12031 ms: escrevendo bloco 13 com caracteres ";"
+12085 ms: escrevendo bloco 14 com caracteres "D"
+12125 ms: escrevendo bloco 15 com caracteres "("
+12161 ms: escrevendo bloco 16 com caracteres "@"
+12212 ms: escrevendo bloco 17 com caracteres ";"
+12264 ms: escrevendo bloco 18 com caracteres "O"
+12297 ms: escrevendo bloco 19 com caracteres "!"
+12346 ms: escrevendo bloco 20 com caracteres ","
+12400 ms: escrevendo bloco 21 com caracteres "?"
+12450 ms: escrevendo bloco 22 com caracteres "/"
+12508 ms: escrevendo bloco 23 com caracteres "5"
+12547 ms: escrevendo bloco 24 com caracteres "'"
+12586 ms: escrevendo bloco 25 com caracteres "0"
+12624 ms: escrevendo bloco 26 com caracteres ":"
+12657 ms: escrevendo bloco 27 com caracteres "/"
+12702 ms: escrevendo bloco 28 com caracteres ")"
+12742 ms: escrevendo bloco 29 com caracteres "D"
+12787 ms: escrevendo bloco 30 com caracteres "E"
+12823 ms: escrevendo bloco 31 com caracteres "-"
+12864 ms: escrevendo bloco 32 com caracteres "3"
+12920 ms: escrevendo bloco 33 com caracteres "O"
+12955 ms: escrevendo bloco 34 com caracteres """
+13000 ms: escrevendo bloco 35 com caracteres "("
+13047 ms: escrevendo bloco 36 com caracteres "+"
+13102 ms: escrevendo bloco 37 com caracteres "%"
+13158 ms: escrevendo bloco 38 com caracteres "!"
+13212 ms: escrevendo bloco 39 com caracteres "6"
+13251 ms: escrevendo bloco 40 com caracteres "L"
+13299 ms: escrevendo bloco 41 com caracteres "/"
+13348 ms: escrevendo bloco 42 com caracteres "C"
+13391 ms: escrevendo bloco 43 com caracteres ")"
+13442 ms: escrevendo bloco 44 com caracteres "J"
+13480 ms: escrevendo bloco 45 com caracteres "9"
+13513 ms: escrevendo bloco 46 com caracteres "+"
+13565 ms: escrevendo bloco 47 com caracteres "5"
+13597 ms: escrevendo bloco 48 com caracteres "/"
+13636 ms: escrevendo bloco 49 com caracteres "1"
+13681 ms: escrevendo bloco 50 com caracteres "4"
+13729 ms: escrevendo bloco 51 com caracteres "/"
+13783 ms: escrevendo bloco 52 com caracteres "0"
+13819 ms: escrevendo bloco 53 com caracteres ":"
+13851 ms: escrevendo bloco 54 com caracteres "?"
+13900 ms: escrevendo bloco 55 com caracteres "K"
+13958 ms: escrevendo bloco 56 com caracteres "7"
+14007 ms: escrevendo bloco 57 com caracteres "1"
+14060 ms: escrevendo bloco 58 com caracteres ")"
+14105 ms: escrevendo bloco 59 com caracteres "'"
+14151 ms: escrevendo bloco 60 com caracteres "H"
+14196 ms: escrevendo bloco 61 com caracteres "#"
+14251 ms: escrevendo bloco 62 com caracteres "'"
+14304 ms: escrevendo bloco 63 com caracteres """
+14356 ms: escrevendo bloco 64 com caracteres ","
+14407 ms: escrevendo bloco 65 com caracteres "7"
+14454 ms: escrevendo bloco 66 com caracteres ","
+14494 ms: escrevendo bloco 67 com caracteres " "
+14540 ms: escrevendo bloco 68 com caracteres "K"
+14572 ms: escrevendo bloco 69 com caracteres ">"
+14612 ms: escrevendo bloco 70 com caracteres ","
+14666 ms: escrevendo bloco 71 com caracteres "5"
+14719 ms: escrevendo bloco 72 com caracteres "$"
+14764 ms: escrevendo bloco 73 com caracteres "N"
+14800 ms: escrevendo bloco 74 com caracteres "@"
+14854 ms: escrevendo bloco 75 com caracteres "!"
+14898 ms: escrevendo bloco 76 com caracteres "'"
+14931 ms: escrevendo bloco 77 com caracteres "L"
+14972 ms: escrevendo bloco 78 com caracteres "L"
+15028 ms: escrevendo bloco 79 com caracteres "5"
+15075 ms: escrevendo bloco 80 com caracteres "A"
+15115 ms: escrevendo bloco 81 com caracteres "8"
+15170 ms: escrevendo bloco 82 com caracteres "#"
+15212 ms: escrevendo bloco 83 com caracteres "*"
+15265 ms: escrevendo bloco 84 com caracteres "4"
+15317 ms: escrevendo bloco 85 com caracteres "H"
+15375 ms: escrevendo bloco 86 com caracteres "B"
+15434 ms: escrevendo bloco 87 com caracteres "3"
+15487 ms: escrevendo bloco 88 com caracteres "C"
+15522 ms: escrevendo bloco 89 com caracteres "C"
+15564 ms: escrevendo bloco 90 com caracteres "8"
+15606 ms: escrevendo bloco 91 com caracteres "<"
+15639 ms: escrevendo bloco 92 com caracteres "H"
+15671 ms: escrevendo bloco 93 com caracteres "="
+15728 ms: escrevendo bloco 94 com caracteres "'"
+15769 ms: escrevendo bloco 95 com caracteres "<"
+15813 ms: escrevendo bloco 96 com caracteres "?"
+15855 ms: escrevendo bloco 97 com caracteres "6"
+15913 ms: escrevendo bloco 98 com caracteres ">"
+15956 ms: escrevendo bloco 99 com caracteres " "
+15990 ms: escrevendo bloco 100 com caracteres "9"
+16034 ms: escrevendo bloco 101 com caracteres "B"
+16083 ms: escrevendo bloco 102 com caracteres "E"
+16130 ms: escrevendo bloco 103 com caracteres "1"
+16184 ms: escrevendo bloco 104 com caracteres "7"
+16219 ms: escrevendo bloco 105 com caracteres ";"
+16267 ms: escrevendo bloco 106 com caracteres "I"
+16300 ms: escrevendo bloco 107 com caracteres "."
+16353 ms: escrevendo bloco 108 com caracteres "1"
+16410 ms: escrevendo bloco 109 com caracteres "6"
+16461 ms: escrevendo bloco 110 com caracteres ">"
+16519 ms: escrevendo bloco 111 com caracteres "!"
+16569 ms: escrevendo bloco 112 com caracteres "'"
+16606 ms: escrevendo bloco 113 com caracteres "/"
+16639 ms: escrevendo bloco 114 com caracteres "8"
+16674 ms: escrevendo bloco 115 com caracteres "7"
+16723 ms: escrevendo bloco 116 com caracteres "7"
+16756 ms: escrevendo bloco 117 com caracteres "L"
+16813 ms: escrevendo bloco 118 com caracteres "/"
+16857 ms: escrevendo bloco 119 com caracteres "4"
+16897 ms: escrevendo bloco 120 com caracteres "B"
+16929 ms: escrevendo bloco 121 com caracteres "&"
+16987 ms: escrevendo bloco 122 com caracteres "8"
+17028 ms: escrevendo bloco 123 com caracteres "L"
+17078 ms: escrevendo bloco 124 com caracteres "@"
+17115 ms: escrevendo bloco 125 com caracteres "!"
+17154 ms: escrevendo bloco 126 com caracteres "5"
+17202 ms: escrevendo bloco 127 com caracteres "<"
+17245 ms: escrevendo bloco 128 com caracteres "K"
+17284 ms: escrevendo bloco 129 com caracteres """
+17324 ms: escrevendo bloco 130 com caracteres ";"
+17368 ms: escrevendo bloco 131 com caracteres "%"
+17424 ms: escrevendo bloco 132 com caracteres "#"
+17459 ms: escrevendo bloco 133 com caracteres "O"
+17491 ms: escrevendo bloco 134 com caracteres "?"
+17536 ms: escrevendo bloco 135 com caracteres "H"
+17593 ms: escrevendo bloco 136 com caracteres "$"
+17651 ms: escrevendo bloco 137 com caracteres ","
+17690 ms: escrevendo bloco 138 com caracteres "C"
+17728 ms: escrevendo bloco 139 com caracteres "E"
+17769 ms: escrevendo bloco 140 com caracteres "K"
+17808 ms: escrevendo bloco 141 com caracteres """
+17852 ms: escrevendo bloco 142 com caracteres "9"
+17894 ms: escrevendo bloco 143 com caracteres "<"
+17941 ms: escrevendo bloco 144 com caracteres "+"
+17979 ms: escrevendo bloco 145 com caracteres "8"
+18033 ms: escrevendo bloco 146 com caracteres "H"
+18080 ms: escrevendo bloco 147 com caracteres "9"
+18114 ms: escrevendo bloco 148 com caracteres "N"
+18159 ms: escrevendo bloco 149 com caracteres "M"
+18191 ms: escrevendo bloco 150 com caracteres "="
+18230 ms: escrevendo bloco 151 com caracteres ">"
+18271 ms: escrevendo bloco 152 com caracteres "$"
+18318 ms: escrevendo bloco 153 com caracteres "="
+18359 ms: escrevendo bloco 154 com caracteres "C"
+18400 ms: escrevendo bloco 155 com caracteres ":"
+18434 ms: escrevendo bloco 156 com caracteres "H"
+18466 ms: escrevendo bloco 157 com caracteres ">"
+18507 ms: escrevendo bloco 158 com caracteres "<"
+18544 ms: escrevendo bloco 159 com caracteres "&"
+18598 ms: escrevendo bloco 160 com caracteres "9"
+18643 ms: escrevendo bloco 161 com caracteres "M"
+18701 ms: escrevendo bloco 162 com caracteres "K"
+18742 ms: escrevendo bloco 163 com caracteres "L"
+18787 ms: escrevendo bloco 164 com caracteres "@"
+18819 ms: escrevendo bloco 165 com caracteres "'"
+18868 ms: escrevendo bloco 166 com caracteres "."
+18909 ms: escrevendo bloco 167 com caracteres ">"
+18951 ms: escrevendo bloco 168 com caracteres " "
+18993 ms: escrevendo bloco 169 com caracteres "9"
+19037 ms: escrevendo bloco 170 com caracteres "-"
+19071 ms: escrevendo bloco 171 com caracteres "A"
+19104 ms: escrevendo bloco 172 com caracteres "!"
+19158 ms: escrevendo bloco 173 com caracteres "G"
+19196 ms: escrevendo bloco 174 com caracteres "*"
+19229 ms: escrevendo bloco 175 com caracteres "D"
+19265 ms: escrevendo bloco 176 com caracteres ","
+19313 ms: escrevendo bloco 177 com caracteres "D"
+19354 ms: escrevendo bloco 178 com caracteres "H"
+19388 ms: escrevendo bloco 179 com caracteres "2"
+19435 ms: escrevendo bloco 180 com caracteres ")"
+19474 ms: escrevendo bloco 181 com caracteres "5"
+19514 ms: escrevendo bloco 182 com caracteres "O"
+19570 ms: escrevendo bloco 183 com caracteres "*"
+19609 ms: escrevendo bloco 184 com caracteres ">"
+19642 ms: escrevendo bloco 185 com caracteres "#"
+19690 ms: escrevendo bloco 186 com caracteres "'"
+19722 ms: escrevendo bloco 187 com caracteres "A"
+19775 ms: escrevendo bloco 188 com caracteres "4"
+19832 ms: escrevendo bloco 189 com caracteres "%"
+19876 ms: escrevendo bloco 190 com caracteres "&"
+19930 ms: escrevendo bloco 191 com caracteres "!"
+19969 ms: escrevendo bloco 192 com caracteres "+"
+20018 ms: escrevendo bloco 193 com caracteres "+"
+20052 ms: escrevendo bloco 194 com caracteres "%"
+20093 ms: escrevendo bloco 195 com caracteres "<"
+20144 ms: escrevendo bloco 196 com caracteres "F"
+20190 ms: escrevendo bloco 197 com caracteres "&"
+20248 ms: escrevendo bloco 198 com caracteres "E"
+20290 ms: escrevendo bloco 199 com caracteres "&"
+20335 ms: escrevendo bloco 200 com caracteres "C"
+20386 ms: escrevendo bloco 201 com caracteres "?"
+20421 ms: escrevendo bloco 202 com caracteres "."
+20469 ms: escrevendo bloco 203 com caracteres "C"
+20509 ms: escrevendo bloco 204 com caracteres "8"
+20563 ms: escrevendo bloco 205 com caracteres "A"
+20605 ms: escrevendo bloco 206 com caracteres "2"
+20644 ms: escrevendo bloco 207 com caracteres "B"
+20702 ms: escrevendo bloco 208 com caracteres "("
+20737 ms: escrevendo bloco 209 com caracteres "A"
+20787 ms: escrevendo bloco 210 com caracteres "J"
+20833 ms: escrevendo bloco 211 com caracteres "L"
+20886 ms: escrevendo bloco 212 com caracteres "."
+20924 ms: escrevendo bloco 213 com caracteres "F"
+20964 ms: escrevendo bloco 214 com caracteres "2"
+21016 ms: escrevendo bloco 215 com caracteres "G"
+21069 ms: escrevendo bloco 216 com caracteres "6"
+21117 ms: escrevendo bloco 217 com caracteres "A"
+21174 ms: escrevendo bloco 218 com caracteres "6"
+21224 ms: escrevendo bloco 219 com caracteres "7"
+21277 ms: escrevendo bloco 220 com caracteres "="
+21333 ms: escrevendo bloco 221 com caracteres "M"
+21366 ms: escrevendo bloco 222 com caracteres "<"
+21404 ms: escrevendo bloco 223 com caracteres "-"
+21440 ms: escrevendo bloco 224 com caracteres "L"
+21497 ms: escrevendo bloco 225 com caracteres "2"
+21554 ms: escrevendo bloco 226 com caracteres "K"
+21608 ms: escrevendo bloco 227 com caracteres "'"
+21648 ms: escrevendo bloco 228 com caracteres "1"
+21686 ms: escrevendo bloco 229 com caracteres "="
+21730 ms: escrevendo bloco 230 com caracteres "*"
+21765 ms: escrevendo bloco 231 com caracteres "*"
+21801 ms: escrevendo bloco 232 com caracteres "*"
+21855 ms: escrevendo bloco 233 com caracteres "4"
+21913 ms: escrevendo bloco 234 com caracteres "?"
+21951 ms: escrevendo bloco 235 com caracteres "?"
+22004 ms: escrevendo bloco 236 com caracteres "%"
+22054 ms: escrevendo bloco 237 com caracteres "M"
+22091 ms: escrevendo bloco 238 com caracteres "L"
+22144 ms: escrevendo bloco 239 com caracteres "E"
+22200 ms: escrevendo bloco 240 com caracteres "9"
+22249 ms: escrevendo bloco 241 com caracteres "/"
+22302 ms: escrevendo bloco 242 com caracteres "'"
+22342 ms: escrevendo bloco 243 com caracteres "N"
+22382 ms: escrevendo bloco 244 com caracteres "C"
+22430 ms: escrevendo bloco 245 com caracteres "<"
+22468 ms: escrevendo bloco 246 com caracteres "0"
+22518 ms: escrevendo bloco 247 com caracteres "M"
+22559 ms: escrevendo bloco 248 com caracteres "!"
+22601 ms: escrevendo bloco 249 com caracteres "+"
+22654 ms: escrevendo bloco 250 com caracteres "N"
+22709 ms: escrevendo bloco 251 com caracteres ">"
+22753 ms: escrevendo bloco 252 com caracteres "7"
+22797 ms: escrevendo bloco 253 com caracteres "$"
+22849 ms: escrevendo bloco 254 com caracteres "%"
+22898 ms: escrevendo bloco 255 com caracteres "K"
+22943 ms: main fim
+Task 0 exit: execution time 22943 ms, processor time 37 ms, 513 activations
+Task 1 exit: execution time 22943 ms, processor time 11256 ms, 54764059 activations

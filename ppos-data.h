@@ -27,13 +27,13 @@ typedef struct task_t
    void* custom_data; // internal data - do not modify!
 
    // ... (outros/novos campos deve ser adicionados APOS esse comentario)
-   int staticPriority; // prioridade estática da tarefa (entre -20 e 20)
-   int dynamicPriority; // prioridade dinâmica da tarefa (entre -20 e 20)
-   int quantum;
-   int activations;
-   int processor_time;
-   int begin;
-   int end;
+   int prio_s, prio_d; // prioridade estatica e dinamica
+   int ticks; // contador de ticks
+   unsigned int processor_time; // acumulador de tempo de processador
+   unsigned int activation_count; // contador de ativações
+   unsigned int create_time; // tempo de criação da tarefa
+   unsigned int execution_time; // tempo de execução da tarefa
+   unsigned int last_activation_time; // tempo que a tarefa ganha o processador
 
 } task_t ;
 
