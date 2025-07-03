@@ -44,36 +44,65 @@ struct itimerval timer;
 
 disk_t disk; // variavel global que representa o disk do SO   
 
-task_t disk_mgr_task;
+task_t* disk_mgr_task;
 
 struct sigaction d_action;
 
 int pos_cabeca = 0;
 int blocos_percorridos = 0;
 
+task_t* fila_espera_disk_mgr = NULL;
+
 void disk_mgr_body (){
+    diskrequest_t* requestAtual = NULL;
+
     while (1) {
         sem_down(&disk.semaforo);
+
+        //printf("[MGR] Entrou no loop, sinal=%d, livre=%d\n", disk.sinal, disk.livre);
+
         if (disk.sinal) {
             disk.sinal = 0;
-            task_resume(disk.diskQueue);    
             disk.livre = 1;
+
+            //printf("[MGR] Sinal de disco recebido, operação concluída\n");
+
+            if (requestAtual) {
+                //printf("[MGR] Retomando tarefa %d e liberando request\n", requestAtual->task->id);
+                task_resume(requestAtual->task); 
+                free(requestAtual);
+                requestAtual = NULL;
+            }
         }
-        if (disk.livre) {
+
+        if(disk.livre && !disk.requestQueue){
+            //printf("[MGR] Nenhuma requisição. Suspendendo gerente...\n");
+            sem_up(&disk.semaforo);
+            task_suspend(disk_mgr_task, &fila_espera_disk_mgr);
+            //printf("[MGR] Gerente acordou!\n");
+            continue;
+        }
+
+        if (disk.livre && disk.requestQueue) {
+            //printf("[MGR] Há requisições. Escolhendo escalonada...\n");
             diskrequest_t* request = disk_scheduler();
+
             if (request) {
+                //printf("[MGR] Executando requisição da task %d para bloco %d (op=%s)\n",
+                //        request->task->id, request->block,
+                //        request->operation == DISK_CMD_READ ? "READ" : "WRITE");
                 sem_down(&disk.semaforo_queue);
                 queue_remove((queue_t**)&disk.requestQueue, (queue_t*)request);
                 sem_up(&disk.semaforo_queue);
 
-                if (request->operation == DISK_CMD_READ) {
+                requestAtual = request; 
+
+                if (request->operation == DISK_CMD_READ)
                     disk_cmd(DISK_CMD_READ, request->block, request->buffer);
-                    disk.livre = 0;
-                } else if (request->operation == DISK_CMD_WRITE) {
+                else
                     disk_cmd(DISK_CMD_WRITE, request->block, request->buffer);
-                    disk.livre = 0;
-                }
-                free(request);  
+                disk.livre = 0;
+
             }
         }
         sem_up(&disk.semaforo);
@@ -82,14 +111,8 @@ void disk_mgr_body (){
 }
 
 void diskSignalHandler(int signum) {
-    disk.sinal = 1;
-}
-
-// Handler para SIGSEGV
-void clean_exit_on_sig(int sig_num) {
-    int err = errno;
-    fprintf(stderr, "\n ERROR[Signal = %d]: %d \"%s\"\n", sig_num, err, strerror(err));
-    exit(err);
+    //printf("[SIGNAL] Disco sinalizou término da operação\n");
+    disk.sinal = 1; // Marca que o disco terminou a operação
 }
 
 int disk_mgr_init (int *numBlocks, int *blockSize){
@@ -121,9 +144,9 @@ int disk_mgr_init (int *numBlocks, int *blockSize){
         perror("Erro em sigaction: ");
         exit(1);
     }
-    //signal(SIGSEGV, clean_exit_on_sig);
 
-    task_create(&disk_mgr_task, disk_mgr_body, NULL);
+    disk_mgr_task = (task_t*)malloc(sizeof(task_t));
+    task_create(disk_mgr_task, disk_mgr_body, NULL);
     countTasks--;
 
     return 0;   
@@ -134,6 +157,9 @@ int disk_mgr_init (int *numBlocks, int *blockSize){
 int disk_block_read (int block, void *buffer){
     if (sem_down(&disk.semaforo) < 0)
         return -1;
+
+    //printf("[READ] Task %d quer ler bloco %d\n", taskExec->id, block);
+
     // cria um request de leitura
     diskrequest_t* request = (diskrequest_t*)malloc(sizeof(diskrequest_t));
     request->operation = DISK_CMD_READ; // leitura
@@ -147,11 +173,23 @@ int disk_block_read (int block, void *buffer){
     queue_append((queue_t**)&disk.requestQueue, (queue_t*)request);
     sem_up(&disk.semaforo_queue);
     
+    // if (fila_espera_disk_mgr != NULL) {
+    //     printf("[READ] Task %d acordando gerente do disco\n", taskExec->id);
+    //     printf("cheguei aqui");
+    //     task_resume(disk_mgr_task);
+    //     fila_espera_disk_mgr = NULL;
+    // }
+
+    if (fila_espera_disk_mgr) {
+    //printf("[READ] Task %d acordando gerente do disco\n", taskExec->id);
+    task_resume(fila_espera_disk_mgr);
+    }
 
     sem_up(&disk.semaforo);
 
+    //printf("[READ] Task %d será suspensa esperando leitura\n", taskExec->id);
     task_suspend(taskExec, &disk.diskQueue);
-    task_yield();
+    //printf("[READ] Task %d retomada após leitura\n", taskExec->id);
 
     return 0;
 }
@@ -160,6 +198,8 @@ int disk_block_read (int block, void *buffer){
 int disk_block_write (int block, void *buffer){
     if (sem_down(&disk.semaforo) < 0)
         return -1;
+
+    //printf("[WRITE] Task %d quer ler bloco %d\n", taskExec->id, block);
 
     // cria um request de escrita
     diskrequest_t* request = (diskrequest_t*)malloc(sizeof(diskrequest_t));
@@ -174,14 +214,24 @@ int disk_block_write (int block, void *buffer){
     queue_append((queue_t**)&disk.requestQueue, (queue_t*)request);
     sem_up(&disk.semaforo_queue);
 
-    // faz a tarefa executar se ela estava suspensa
-    if (disk_mgr_task.state == 'S')
-        task_resume(&disk_mgr_task);
+
+    // if (fila_espera_disk_mgr != NULL) {
+    //     printf("[WRITE] Task %d acordando gerente do disco\n", taskExec->id);
+    //     printf("cheguei aqui");
+    //     task_resume(disk_mgr_task);
+    //     fila_espera_disk_mgr = NULL;
+    // }
+
+    if (fila_espera_disk_mgr) {
+        //printf("[write] Task %d acordando gerente do disco\n", taskExec->id);
+        task_resume(fila_espera_disk_mgr);
+    }
 
     sem_up(&disk.semaforo);
 
+    //printf("[WRITE] Task %d será suspensa esperando leitura\n", taskExec->id);
     task_suspend(taskExec, &disk.diskQueue);
-    task_yield();
+    //printf("[WRITE] Task %d retomada após leitura\n", taskExec->id);
 
     return 0;
 }
